@@ -1,10 +1,10 @@
 export default {
-  async all(id) {
+  async all(zone_id) {
     const resp = await fetch(
-      'https://api.cloudflare.com/client/v4/zones/' + id + '/dns_records',
+      'https://api.cloudflare.com/client/v4/zones/' + zone_id + '/dns_records',
       {
         headers: {
-          Authorization: 'Bearer 4LUGFkewUttYXj4NjbGmdVl04wVoUDGMBa4IKpai',
+          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
         },
       },
     )
@@ -19,7 +19,7 @@ export default {
         dns_id,
       {
         headers: {
-          Authorization: 'Bearer 4LUGFkewUttYXj4NjbGmdVl04wVoUDGMBa4IKpai',
+          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
         },
       },
     )
@@ -34,7 +34,7 @@ export default {
         dns_id,
       {
         headers: {
-          Authorization: 'Bearer VIMPp1IuXv8TVPpo7M-hFUHpinj_T6fstrQjYyNv',
+          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
         },
         method: 'PATCH',
         body: JSON.stringify(await body.json()),
@@ -51,9 +51,23 @@ export default {
         dns_id,
       {
         headers: {
-          Authorization: 'Bearer VIMPp1IuXv8TVPpo7M-hFUHpinj_T6fstrQjYyNv',
+          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
         },
         method: 'DELETE',
+      },
+    )
+    const data = await resp.json()
+    return data
+  },
+  async create(zone_id, body) {
+    const resp = await fetch(
+      'https://api.cloudflare.com/client/v4/zones/' + zone_id + '/dns_records',
+      {
+        headers: {
+          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
+        },
+        method: 'POST',
+        body: JSON.stringify(await body.json()),
       },
     )
     const data = await resp.json()

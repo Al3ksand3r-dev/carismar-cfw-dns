@@ -27,5 +27,11 @@ const deleteOne = async req => {
   )
   return new Response(body, { headers })
 }
+const create = async req => {
+  const body = JSON.stringify(
+    await DnsFunctions.create(req.params.zone_id, req),
+  )
+  return new Response(body, { headers })
+}
 
-export default { getAll, getOne, updateOne, deleteOne }
+export default { getAll, getOne, updateOne, deleteOne, create }

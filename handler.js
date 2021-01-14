@@ -11,6 +11,7 @@ router
   .get('/api/zones/:zone_id/dns_records/:dns_id', DnsController.getOne)
   .patch('/api/zones/:zone_id/dns_records/:dns_id', DnsController.updateOne)
   .delete('/api/zones/:zone_id/dns_records/:dns_id', DnsController.deleteOne)
+  .post('/api/zones/:zone_id/dns_records', DnsController.create)
   .get('*', () => new Response('Not found', { status: 404 }))
 
 export const handleRequest = request => router.handle(request)
