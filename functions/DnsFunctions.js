@@ -4,7 +4,7 @@ export default {
       'https://api.cloudflare.com/client/v4/zones/' + zone_id + '/dns_records',
       {
         headers: {
-          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
+          Authorization: 'Bearer ' + API_TOKEN,
         },
       },
     )
@@ -19,7 +19,7 @@ export default {
         dns_id,
       {
         headers: {
-          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
+          Authorization: 'Bearer ' + API_TOKEN,
         },
       },
     )
@@ -34,7 +34,7 @@ export default {
         dns_id,
       {
         headers: {
-          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
+          Authorization: 'Bearer ' + API_TOKEN,
         },
         method: 'PATCH',
         body: JSON.stringify(await body.json()),
@@ -51,7 +51,7 @@ export default {
         dns_id,
       {
         headers: {
-          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
+          Authorization: 'Bearer ' + API_TOKEN,
         },
         method: 'DELETE',
       },
@@ -64,7 +64,7 @@ export default {
       'https://api.cloudflare.com/client/v4/zones/' + zone_id + '/dns_records',
       {
         headers: {
-          Authorization: 'Bearer WGns3wuIpc1hkQv0_LJGt6kRBalL9su8VZKTUFHX',
+          Authorization: 'Bearer ' + API_TOKEN,
         },
         method: 'POST',
         body: JSON.stringify(await body.json()),
